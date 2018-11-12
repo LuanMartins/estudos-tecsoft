@@ -1,0 +1,40 @@
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Nome</label>
+    <input type="text" class="form-control" [(ngModel)]="aluno.name" name="name">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput2">Preço</label>
+    <input type="text" class="form-control" [(ngModel)]="aluno.price" name="price">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput3">Tipo</label>
+    <input type="text" class="form-control" [(ngModel)]="aluno.type" name="price">
+    <br>
+    <input type="button" class="btn btn-primary" value="Salvar" (click)="criarAluno(aluno)" >
+  </div>
+</form>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Tipo</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of dadosAlunos" >
+      <th scope="row">1</th>
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>R$ {{item.price}}</td>
+      <td>{{item.type}}</td>
+      
+    </tr>
+   
+  </tbody>
+</table>
+
