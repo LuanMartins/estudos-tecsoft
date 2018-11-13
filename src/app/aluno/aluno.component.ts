@@ -22,6 +22,14 @@ export class AlunoComponent implements OnInit {
   ngOnInit() {
   }
 
+  public setarNoForm(value){
+
+    this.aluno.name = value.name;
+    this.aluno.price = value.price;
+    this.aluno.type = value.type;
+
+  }
+
   public mostrarValor(){
 
     console.log(this.aluno.name);
@@ -42,6 +50,37 @@ export class AlunoComponent implements OnInit {
       }
     )
 
+  }
+
+  public deletarAluno(id){
+
+    console.log(id);
+    this.servicoAluno.deleteAlunos(id).subscribe(
+
+      res =>{
+        console.log(res);
+      },
+
+      err => {
+
+        console.log(err);
+      }
+    )
+
+  }
+
+  public atualizarAlunos(value){
+    console.log(value.id);
+    this.servicoAluno.updateAlunos(value)
+      .subscribe(
+        res => {
+            console.log(res);
+        },
+
+        err => {
+          console.log(err);  
+        }
+      )
   }
 
 }

@@ -28,6 +28,19 @@ export class AlunosService {
       
    }
 
+   public deleteAlunos(value){
+
+    return this.http.delete(this.url + "/" + value.id, {headers: this.headers});
+
+   }
+
+   public updateAlunos(value){
+
+    console.log(this.url + "/" + value.id);
+    return this.http.put(this.url + "/" + 1, value, {headers: this.headers});
+    
+   }
+
    
 
 }
